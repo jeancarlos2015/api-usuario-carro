@@ -8,18 +8,22 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "carros")
 
-public class Usuario {
+public class Carro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
     private String nome;
     @NotNull
-    private String senha;
+    private String marca;
     @NotNull
-    private String email;
+    private String modelo;
+    @NotNull
+    private String chassi;
+
+
     public Long getId() {
         return id;
     }
@@ -32,17 +36,29 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getSenha() {
-        return senha;
+    
+    public String getMarca() {
+        return marca;
     }
-    public void setSenha(String senha) {
-        this.senha = senha;
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
-    public String getEmail() {
-        return email;
+
+    public String getModelo() {
+        return modelo;
     }
-    public void setEmail(String email) {
-        this.email = email;
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getChassi() {
+        return chassi;
+    }
+
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
     }
 
    

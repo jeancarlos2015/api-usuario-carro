@@ -15,9 +15,9 @@ import api.appusuario.services.UsuarioService;
 import api.appusuario.services.dto.usuario.UsuarioBuscaDTO;
 import api.appusuario.services.dto.usuario.UsuarioCadastroDTO;
 import api.appusuario.services.dto.usuario.UsuarioEdicaoDTO;
-import api.appusuario.services.mappers.UsuarioBuscaMapper;
-import api.appusuario.services.mappers.UsuarioCadastroMapper;
-import api.appusuario.services.mappers.UsuarioEdicaoMapper;
+import api.appusuario.services.mappers.usuario.UsuarioBuscaMapper;
+import api.appusuario.services.mappers.usuario.UsuarioCadastroMapper;
+import api.appusuario.services.mappers.usuario.UsuarioEdicaoMapper;
 
 @Transactional
 @Service
