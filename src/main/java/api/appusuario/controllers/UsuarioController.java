@@ -36,7 +36,7 @@ public class UsuarioController {
     }
     
     @ResponseStatus(code = HttpStatus.OK)
-    @GetMapping("/{id}")
+    @GetMapping("buscarUsuario/{id}")
     public UsuarioBuscaDTO buscarPorId(@PathVariable Long  id) {
         return usuarioService.buscarPorId(id);
     }
@@ -48,13 +48,13 @@ public class UsuarioController {
     }
 
     @ResponseStatus(code = HttpStatus.OK)
-    @DeleteMapping("/{id}")
+    @DeleteMapping("excluirUsuario/{id}")
     public void excluir(@PathVariable Long id) {
         usuarioService.excluir(id);
     }
 
     @ResponseStatus(code = HttpStatus.OK)
-    @GetMapping
+    @GetMapping("listarUsuarios")
     public List<UsuarioBuscaDTO> buscarTodos() {
         return usuarioService.buscarTodos();
     }
