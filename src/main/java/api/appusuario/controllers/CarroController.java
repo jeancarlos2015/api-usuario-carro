@@ -23,7 +23,7 @@ import api.appusuario.services.dto.carro.CarroCadastroDTO;
 import api.appusuario.services.dto.carro.CarroEdicaoDTO;
 
 @RestController
-@RequestMapping("/carro")
+@RequestMapping("/api/carro")
 @CrossOrigin
 public class CarroController {
     @Autowired

@@ -6,17 +6,18 @@ import javax.validation.constraints.NotNull;
 
 public class UsuarioCadastroDTO {
     @NotNull
-    private String nome;
+    private String login;
+   
     @NotNull
     private String senha;
     @NotNull
     private String email;
     
-    public String getNome() {
-        return nome;
+    public String getLogin() {
+        return login;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setLogin(String login) {
+        this.login = login;
     }
     public String getSenha() {
         return senha;

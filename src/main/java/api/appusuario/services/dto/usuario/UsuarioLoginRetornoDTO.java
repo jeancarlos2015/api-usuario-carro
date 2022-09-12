@@ -1,18 +1,12 @@
 package api.appusuario.services.dto.usuario;
 
-import javax.validation.constraints.NotNull;
-
-public class UsuarioEdicaoDTO {
-   
-    @NotNull
+public class UsuarioLoginRetornoDTO {
     private Long id;
-    @NotNull
     private String login;
-   
-    @NotNull
-    private String senha;
-    @NotNull
+    private boolean admin;
     private String email;
+    private String token;
+    
     public Long getId() {
         return id;
     }
@@ -25,18 +19,24 @@ public class UsuarioEdicaoDTO {
     public void setLogin(String login) {
         this.login = login;
     }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
     public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
         this.email = email;
     }
+    public boolean isAdmin() {
+        return admin;
+    }
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
+  
 
-    
 }

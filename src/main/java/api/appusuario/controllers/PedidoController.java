@@ -1,5 +1,6 @@
 package api.appusuario.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -29,49 +30,27 @@ import api.appusuario.services.dto.usuario.UsuarioLoginDTO;
 import api.appusuario.services.dto.usuario.UsuarioLoginRetornoDTO;
 
 @RestController
-@RequestMapping("/api/usuario")
+@RequestMapping("/api/pedido")
 
-public class UsuarioController {
-    @Autowired
-    private UsuarioService usuarioService;
-    @Autowired
-    private UsuarioServiceSecurityImp usuarioServiceSecurityImp;
+public class PedidoController {
+  
+   
 
-    @ResponseStatus(code = HttpStatus.CREATED)
-    @PostMapping
-    public UsuarioLoginRetornoDTO cadastrar(@RequestBody @Valid UsuarioCadastroDTO usuarioDTO) {
-        return usuarioServiceSecurityImp.salvar(usuarioDTO);
-    }
-
-    @ResponseStatus(code = HttpStatus.OK)
-    @GetMapping("/{id}")
-    public UsuarioBuscaDTO buscarPorId(@PathVariable Long id) {
-        return usuarioService.buscarPorId(id);
-    }
-
-    @ResponseStatus(code = HttpStatus.OK)
-    @PutMapping
-    public UsuarioBuscaDTO atualizar(@RequestBody @Valid UsuarioEdicaoDTO usuarioDTO) {
-        return usuarioService.atualizar(usuarioDTO);
-    }
+  
+ 
 
     @ResponseStatus(code = HttpStatus.OK)
     @DeleteMapping("/{id}")
     public void excluir(@PathVariable Long id) {
-        usuarioService.excluir(id);
+       
     }
 
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping
     public List<UsuarioBuscaDTO> buscarTodos() {
-        return usuarioService.buscarTodos();
+        return new ArrayList<>();
     }
     
-    @ResponseStatus(code = HttpStatus.OK)
-    @PostMapping("/auth")
-    public UsuarioLoginRetornoDTO autenticar(@RequestBody UsuarioLoginDTO credenciais) {
-    	return	usuarioServiceSecurityImp.autenticar(credenciais);
-	
-    }
+    
 
 }
