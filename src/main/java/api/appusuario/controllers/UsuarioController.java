@@ -6,8 +6,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +17,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import api.appusuario.config.security.UsuarioServiceSecurityImp;
-import api.appusuario.config.security.exception.SenhaInvalidaException;
-import api.appusuario.models.Usuario;
 import api.appusuario.services.UsuarioService;
 import api.appusuario.services.dto.usuario.UsuarioBuscaDTO;
 import api.appusuario.services.dto.usuario.UsuarioCadastroDTO;
@@ -64,6 +60,7 @@ public class UsuarioController {
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping
     public List<UsuarioBuscaDTO> buscarTodos() {
+    	
         return usuarioService.buscarTodos();
     }
     

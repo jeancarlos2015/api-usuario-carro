@@ -37,13 +37,15 @@ public class CarroServiceImp implements CarroService {
         Carro carroCadastro = carroCadastroMapper.toEntity(carroDTO);
         Carro carro = carroRepository.save(carroCadastro);
         return carroBuscaMapper.toDto(carro);
+        
     }
 
     @Override
     public CarroBuscaDTO buscarPorId(Long id) {
         try {
-            Carro usuario = carroRepository.findById(id).get();
-            return carroBuscaMapper.toDto(usuario);
+            Carro carro = carroRepository.findById(id).get();
+            return carroBuscaMapper.toDto(carro);
+    
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
@@ -55,6 +57,8 @@ public class CarroServiceImp implements CarroService {
             Carro carroEdicao = carroEdicaoMapper.toEntity(carroEdicaoDTO);
             Carro carroResult = carroRepository.save(carroEdicao);
             return carroBuscaMapper.toDto(carroResult);
+      
+       
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

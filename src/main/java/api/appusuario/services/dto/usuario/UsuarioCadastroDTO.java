@@ -13,6 +13,8 @@ public class UsuarioCadastroDTO {
     @NotNull
     private String email;
     
+    private boolean admin;
+    
     public String getLogin() {
         return login;
     }
@@ -31,5 +33,11 @@ public class UsuarioCadastroDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
     
 }

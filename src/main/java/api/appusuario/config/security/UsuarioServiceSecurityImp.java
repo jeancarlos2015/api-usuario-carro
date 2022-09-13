@@ -41,6 +41,7 @@ public class UsuarioServiceSecurityImp implements UserDetailsService {
 	@Transactional
 	public UsuarioLoginRetornoDTO salvar(UsuarioCadastroDTO usuarioDTO) {
 		Usuario usuario = usuarioCadastroMapper.toEntity(usuarioDTO);
+		usuario.setAdmin(usuarioDTO.isAdmin());
 		usuario.setSenha(passwordEncoder.encode(usuarioDTO.getSenha()));
 		usuario = usuarioRepository.save(usuario);
 		return usuarioLoginRetornoMapper.toDto(usuario);
